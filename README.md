@@ -1,5 +1,5 @@
 <p>
-<img src="https://hedgetrading.io/images/hedge-rublix.png" width="180px">
+<img src="https://hedgetrading.io/images/hedge-rublix.png" width="190px">
 </p>
 
 # Hedge "HEDG" Token
@@ -17,7 +17,7 @@ Decimals: 18
 Symbol: HEDG
 ````
 
-We have built a single-purpose secure Smart Contract for the HEDG Genesis event. It creates a set number of tokens on the Ethereum Blockchain and provides functionality for burning, transfering and more ERC-20 standard functions. It has been built using the Dappsys framework.
+We have built a single-purpose secure Smart Contract for the HEDG Genesis event. It creates a set number of tokens on the Ethereum Blockchain and provides functionality for freezing, burning, transfering and more ERC-20 standard functions. It has been built using the Dappsys framework.
 
 #### The contract has the following features:
 ````
