@@ -5,7 +5,7 @@
 # Hedge "HEDG" Token
 ### ERC-20 Token Genesis
 Learn more at: https://hedgetrading.io
-Etherscan link: https://etherscan.io/token/0xb6b6bd3c75c4237089b5ed518a1809c297cc2e6b
+<br>Etherscan link: https://etherscan.io/token/0xb6b6bd3c75c4237089b5ed518a1809c297cc2e6b
 
 #### Official Token Contract Address:
 ````
