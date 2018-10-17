@@ -1,5 +1,5 @@
 <p>
-<img src="https://hedgetrading.io/images/hedge-rublix.png" width="140px">
+<img src="https://hedgetrading.io/images/hedge-rublix.png" width="180px">
 </p>
 
 # Hedge "HEDG" Token
@@ -22,7 +22,7 @@ We have built a single-purpose secure Smart Contract for the HEDG Genesis event.
 ````
 1. Initial Creator Set
 2. Token Freeze Security Function
-3. Kill Switch
+3. Kill Switch Security Function
 3. Use of Ethereum/Solidity best practices
-4. Built using Dappsys framework 
+4. based on the Dappsys framework 
 ````
