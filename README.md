@@ -1,5 +1,5 @@
 <p>
-<img src="https://hedgetrading.io/images/hedge-rublix.png" width="190px">
+<img src="https://i.imgur.com/1rPCvrn.png" width="190px">
 </p>
 
 # Hedge "HEDG" Token
