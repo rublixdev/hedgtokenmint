@@ -1,4 +1,11 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.25;
+
+/*HedgeTrade Platform Token
+Rublix Development Pte. Ltd.
+Singapore
+Symbol: HEDG
+Version: 1.1
+*/
 
 contract DSAuthority {
     function canCall(
@@ -156,17 +163,17 @@ contract DSTokenBase is ERC20, DSMath {
     function totalSupply() public view returns (uint) {
         return _supply;
     }
-    
+
  /**
   * @dev Gets the balance of the specified address.
   * @param src The address to query the balance of.
   * @return An uint256 representing the amount owned by the passed address.
   */
-    
+
     function balanceOf(address src) public view returns (uint) {
         return _balances[src];
     }
-    
+
  /**
    * @dev Function to check the amount of tokens that an owner allowed to a spender.
    * @param src address The address which owns the funds.
@@ -175,17 +182,17 @@ contract DSTokenBase is ERC20, DSMath {
     function allowance(address src, address guy) public view returns (uint) {
         return _approvals[src][guy];
     }
-    
+
   /**
    * @dev Transfer token for a specified address
    * @param dst The address to transfer to.
    * @param wad The amount to be transferred.
    */
-    
+
     function transfer(address dst, uint wad) public returns (bool) {
         return transferFrom(msg.sender, dst, wad);
     }
-    
+
  /**
    * @dev Transfer tokens from one address to another
    * @param src address The address which you want to send tokens from
@@ -208,8 +215,8 @@ contract DSTokenBase is ERC20, DSMath {
 
         return true;
     }
-    
-    
+
+
  /**
    * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
    * Beware that changing an allowance with this method brings the risk that someone may use both the old
@@ -227,7 +234,7 @@ contract DSTokenBase is ERC20, DSMath {
 
         return true;
     }
-    
+
  /**
    * @dev Increase the amount of tokens that an owner allowed to a spender.
    * approve should be called when allowed_[_spender] == 0. To increment
@@ -250,7 +257,7 @@ contract DSTokenBase is ERC20, DSMath {
     emit Approval(msg.sender, src, _approvals[msg.sender][src]);
     return true;
   }
-  
+
  /**
    * @dev Decrese the amount of tokens that an owner allowed to a spender.
    * approve should be called when allowed_[_spender] == 0. To increment
@@ -272,7 +279,7 @@ contract DSTokenBase is ERC20, DSMath {
     emit Approval(msg.sender, src, _approvals[msg.sender][src]);
     return true;
   }
-    
+
 }
 
 contract DSNote {
@@ -318,11 +325,11 @@ contract DSStop is DSNote, DSAuth {
 }
 
 
-contract HedgeToken is DSTokenBase , DSStop {
+contract HedgeTradeToken is DSTokenBase , DSStop {
 
     string  public  symbol="HEDG";
-    string  public  name="Hedge Token";
-    uint256  public  decimals = 18; // standard token precision. override to customize
+    string  public  name="HedgeTrade";
+    uint256  public  decimals = 18; // Standard Token Precision
     uint256 public constant DECIMALFACTOR = 10**uint256(18);
     uint256 public initialSupply=1000000000*DECIMALFACTOR;
     address public burnAdmin;
@@ -333,7 +340,7 @@ contract HedgeToken is DSTokenBase , DSStop {
     }
 
     event Burn(address indexed guy, uint wad);
-    
+
  /**
    * @dev Throws if called by any account other than the owner.
    */
@@ -385,33 +392,9 @@ contract HedgeToken is DSTokenBase , DSStop {
     }
 
 
-  /**
-   * @dev Burns a specific amount of tokens.
-   * @param wad The amount of token to be burned.
-   */
-    function burn(uint wad) public {
-        burn(msg.sender, wad);
-    }
-   
-  /**
-   * @dev Burns a specific amount of tokens from the target address and decrements allowance
-   * @param guy address The address which you want to send tokens from
-   * @param wad uint256 The amount of token to be burned
-   */
-    function burn(address guy, uint wad) public auth stoppable {
-        require(guy != address(0));
 
-        if (guy != msg.sender && _approvals[guy][msg.sender] != uint(-1)) {
-            _approvals[guy][msg.sender] = sub(_approvals[guy][msg.sender], wad);
-        }
-
-        _balances[guy] = sub(_balances[guy], wad);
-        _supply = sub(_supply, wad);
-        emit Burn(guy, wad);
-    }
-    
     /**
-   * @dev Burns a specific amount of tokens from the target address 
+   * @dev Burns a specific amount of tokens from the target address
    * @param guy address The address which you want to send tokens from
    * @param wad uint256 The amount of token to be burned
    */
@@ -421,8 +404,10 @@ contract HedgeToken is DSTokenBase , DSStop {
 
         _balances[guy] = sub(_balances[guy], wad);
         _supply = sub(_supply, wad);
+
         emit Burn(guy, wad);
+        emit Transfer(guy, address(0), wad);
     }
 
-   
+
 }
