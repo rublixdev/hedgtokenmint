@@ -9,7 +9,7 @@ Learn more at: https://hedgetrade.com
 
 #### Official Token Contract Address:
 ````
-0xb6b6bd3c75c4237089b5ed518a1809c297cc2e6b
+0xe31d93278aa45075f06376603d37adef06b37b5c
 ````
 #### Official Token Details:
 ````
