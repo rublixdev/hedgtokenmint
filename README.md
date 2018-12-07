@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/1rPCvrn.png" width="190px">
 </p>
 
-# Hedge "HEDG" Token v1.2
+# HedgeTrade "HEDG" Token v1.2
 ### ERC-20 Token Genesis
 Learn more at: https://hedgetrade.com
 <br>Etherscan link: https://etherscan.io/token/0x3363d570f6df3c74d486bb8785d3ebfb9e2347d3
