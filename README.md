@@ -2,10 +2,10 @@
 <img src="https://i.imgur.com/1rPCvrn.png" width="190px">
 </p>
 
-# Hedge "HEDG" Token
+# Hedge "HEDG" Token v1.1
 ### ERC-20 Token Genesis
 Learn more at: https://hedgetrade.com
-<br>Etherscan link: https://etherscan.io/token/0xb6b6bd3c75c4237089b5ed518a1809c297cc2e6b
+<br>Etherscan link: https://etherscan.io/token/0xe31d93278aa45075f06376603d37adef06b37b5c
 
 #### Official Token Contract Address:
 ````
@@ -25,5 +25,5 @@ We have built a single-purpose secure Smart Contract for the HEDG Genesis event.
 2. Token Freeze Security Function
 3. Kill Switch Security Function
 3. Use of Ethereum/Solidity best practices
-4. based on the Dappsys framework 
+4. Based on the Dappsys framework 
 ````
