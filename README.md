@@ -1,5 +1,5 @@
 <p>
-<img src="https://hedgetrade.com/pages/images/horizontal-logo_white.svg">
+<img src="https://hedgetrade.com/pages/images/logo-bull.png">
 </p>
 
 # HedgeTrade "HEDG" Token v1.2
