@@ -5,11 +5,11 @@
 # HedgeTrade "HEDG" Token v2
 ### ERC-20 Token Genesis
 Learn more at: https://hedgetrade.com
-<br>Etherscan link: https://etherscan.io/address/0xe52dbf7581726d533093273bcb8897804a9d8a05#code
+<br>Etherscan link: https://etherscan.io/address/0x3aD8155264de7df09b270135263cAdfF4574c0bD#code
 
 #### Official Token Contract Address:
 ````
-0xe52dbf7581726d533093273bcb8897804a9d8a05
+0x3aD8155264de7df09b270135263cAdfF4574c0bD
 ````
 #### Official Token Details:
 ````
