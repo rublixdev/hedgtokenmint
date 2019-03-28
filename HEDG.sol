@@ -1,4 +1,4 @@
-pragma solidity ^0.5.6;
+pragma solidity 0.5.7;
 
 contract DSMath {
     function add(uint x, uint y) internal pure returns (uint z) {
@@ -136,6 +136,7 @@ contract DSTokenBase is ERC20, DSMath {
         return true;
     }
 }
+
 contract DSNote {
     event LogNote(
         bytes4   indexed  sig,
@@ -231,14 +232,15 @@ contract DSStop is DSNote, DSAuth {
     }
 
 }
-contract HedgeTrade is DSTokenBase(0), DSStop {
 
+contract HedgeTrade is DSTokenBase(0), DSStop {
+		// _trusted[persons adddress][authorities address]?
     mapping (address => mapping (address => bool)) _trusted;
 
     bytes32  public  symbol;
     uint256  public  decimals = 18; // standard token precision. override to customize
 
-    constructor (bytes32 symbol_) public {
+    constructor(bytes32 symbol_) public {
         symbol = symbol_;
     }
 
@@ -296,10 +298,6 @@ contract HedgeTrade is DSTokenBase(0), DSStop {
         emit Mint(guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
-        if (guy != msg.sender && !_trusted[guy][msg.sender]) {
-            _approvals[guy][msg.sender] = sub(_approvals[guy][msg.sender], wad);
-        }
-
         _balances[guy] = sub(_balances[guy], wad);
         _supply = sub(_supply, wad);
         emit Burn(guy, wad);
