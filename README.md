@@ -21,8 +21,9 @@ We have built a single-purpose secure Smart Contract for the HEDG Genesis event.
 
 #### The contract has the following features:
 ````
-1. Initial Creator Set
-2. Kill Switch Security Function
+1. Initial owner set
+2. Start/Stop security function
 3. Use of Ethereum/Solidity best practices
-4. Based on the Dappsys framework 
+4. Burnable tokens for security
+5. Based on the Dappsys framework 
 ````
