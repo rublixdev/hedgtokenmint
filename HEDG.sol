@@ -296,11 +296,13 @@ contract HedgeTrade is DSTokenBase(0), DSStop {
         _balances[guy] = add(_balances[guy], wad);
         _supply = add(_supply, wad);
         emit Mint(guy, wad);
+	emit Transfer(address(0), guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
         _balances[guy] = sub(_balances[guy], wad);
         _supply = sub(_supply, wad);
         emit Burn(guy, wad);
+	emit Transfer(guy, address(0), wad);
     }
 
     // Optional token name
