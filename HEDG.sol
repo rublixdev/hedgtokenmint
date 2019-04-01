@@ -68,7 +68,6 @@ contract DSMath {
     }
 }
 
-
 contract ERC20Events {
     event Approval(address indexed src, address indexed guy, uint wad);
     event Transfer(address indexed src, address indexed dst, uint wad);
@@ -238,7 +237,7 @@ contract HedgeTrade is DSTokenBase(0), DSStop {
     mapping (address => mapping (address => bool)) _trusted;
 
     bytes32  public  symbol;
-    uint256  public  decimals = 18; // standard token precision. override to customize
+    uint256  public  decimals = 18; // standard token precision. override to customize.
 
     constructor(bytes32 symbol_) public {
         symbol = symbol_;
@@ -296,13 +295,13 @@ contract HedgeTrade is DSTokenBase(0), DSStop {
         _balances[guy] = add(_balances[guy], wad);
         _supply = add(_supply, wad);
         emit Mint(guy, wad);
-	emit Transfer(address(0), guy, wad);
+	    emit Transfer(address(0), guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
         _balances[guy] = sub(_balances[guy], wad);
         _supply = sub(_supply, wad);
         emit Burn(guy, wad);
-	emit Transfer(guy, address(0), wad);
+	    emit Transfer(guy, address(0), wad);
     }
 
     // Optional token name
